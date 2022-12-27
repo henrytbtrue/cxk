@@ -57,6 +57,7 @@ class Skill {
     }
     this.lastCastTime = Date.now(); // 更新上次释放时间
     this.main.score.allScore -= this.cost;  // 扣除积分
+    this.main.score.skillCost += this.cost;
     // TODO 显示释放技能的特效
     console.log(`cxk消耗了${this.cost}积分发动了技能——${this.name}！\n${this.desc}`)
   }

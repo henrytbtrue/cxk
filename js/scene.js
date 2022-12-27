@@ -165,6 +165,7 @@ class Score {
       blockList: _main.blockList,                     // 砖块对象集合
       blockListLen: _main.blockList.length,           // 砖块总数量
       lv: _main.LV,                                   // 当前关卡
+      skillCost: 0,                                   // 技能扣分
     }
     Object.assign(this, s)
   }
@@ -173,7 +174,7 @@ class Score {
     let num = 0
     let allNum = this.blockListLen
     num = this.blockListLen - this.blockList.length
-    this.allScore = this.score * num
+    this.allScore = this.score * num - this.skillCost
   }
 }
 // 定义场景
