@@ -30,8 +30,8 @@ class Skill {
 
   bindKey() {
     window.addEventListener('keydown', (event) => {
-      if ((typeof this.keyCode === 'number' && event.keyCode === this.keyCode)
-        || (Array.isArray(this.keyCode) && this.keyCode.indexOf(event.keyCode) >= 0)
+      if ((!event.repeat) && ((typeof this.keyCode === 'number' && event.keyCode === this.keyCode)
+        || (Array.isArray(this.keyCode) && this.keyCode.indexOf(event.keyCode) >= 0))
       ) {
         try {
           this.cast();
